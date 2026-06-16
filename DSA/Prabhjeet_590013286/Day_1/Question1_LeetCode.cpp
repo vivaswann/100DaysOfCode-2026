@@ -1,19 +1,31 @@
+/*Missing Number -- Explanation
+Write an efficient function to find the missing number in an array 
+containing n distinct numbers from the range [0,n].*/
+
 #include <iostream>
+#include <vector>
 using namespace std;
+
+int missingNumber(vector<int>& nums) {
+
+    int n = nums.size();
+
+    int expectedSum = n * (n + 1) / 2; // Sum from 0 to n
+
+    int actualSum = 0;
+
+    for (int num : nums) {
+        actualSum += num;
+    }
+
+    return expectedSum - actualSum; // Missing number
+}
 
 int main() {
 
-    int arr[] = {12, 35, 1, 10, 34, 1};  
+    vector<int> nums = {3, 0, 1};
 
-    int n = sizeof(arr) / sizeof(arr[0]); // Total number of elements
+    cout << missingNumber(nums);
 
-    int sum = 0;                          
-
-    for (int i = 0; i < n; i++) {
-        sum += arr[i];                    // Adding each element
-    }
-
-    cout << sum;                          
-
-    return 0;                             
+    return 0;
 }

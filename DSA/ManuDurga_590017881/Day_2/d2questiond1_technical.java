@@ -1,3 +1,4 @@
+package Day_2;
 import java.util.Scanner;
 public class d2questiond1_technical {
     public static void main(String[] args){
